@@ -8,14 +8,14 @@ InHand Mo 系列单板计算机的 AI 模型清单、模型编译脚本与可复
 
 ## 状态
 
-本仓库目前是骨架：目录结构、贡献规范以及 CI 与发布流水线已就绪，内容将分阶段加入。每个占位目录中的 `README.md` 说明了该目录将要存放的内容。
+首版清单已就位：`models.json` 共 12 条（Mo OS V1.1.0 镜像内置的 11 个模型包与教程模型），以及文档已发布的编译脚本、基准脚本和 V1.1.0 兼容基线。参照 TI edgeai-modelzoo 的做法，模型文件一律通过 `.link` 文件（每文件一行 URL）引用，仓库不存模型二进制；源模型与 TI 预编译产物指向 TI 公开模型库。InHand 自编译的模型包尚无下载服务器，状态标记为 `pending-hosting`。在发布版本之前，本仓库内容不用于生产。
 
 ## 目录结构
 
-- `models/` — Model catalog entries
-- `compile/` — Model compilation scripts
-- `benchmarks/` — Benchmark scripts
-- `compat/` — Compatibility matrix
+- `models/` — 每个模型一个目录：README、`source-model.link`、`ti-artifact-am62a.link`
+- `compile/` — 主机侧编译脚本（TIDL `11_02_17_00`，版本钉定见 mo-tools）
+- `benchmarks/` — 板上时延脚本与原始结果记录
+- `compat/` — 已验证的板卡 / 镜像 / TIDL / 运行时基线（`compat.json`）
 - `scripts/` — 仓库维护脚本（提交信息检查、变更记录生成）
 - `.githooks/` — 本地提交信息检查钩子
 - `.github/` — Issue 表单、PR 模板与 GitHub Actions 工作流

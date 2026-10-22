@@ -63,17 +63,8 @@ jobs:
             python3 -c 'import sys, json; json.load(open(sys.argv[1], encoding="utf-8"))' "$f"
           done
 
-      - name: Model catalog (models.json)
-        if: hashFiles('models.json') != ''
-        run: |
-          python3 - <<'EOF'
-          import json
-          with open('models.json', encoding='utf-8') as f:
-              catalog = json.load(f)
-          assert isinstance(catalog, dict), 'models.json must be an object'
-          assert isinstance(catalog.get('models'), list), 'models.json needs a "models" list'
-          print(f"models.json: {len(catalog['models'])} model(s)")
-          EOF
+      - name: Model catalog (models.json and .link files)
+        run: python3 scripts/validate-catalog.py
 
       - name: Changelog generator (node syntax check)
         run: node --check scripts/generate-changelog.mjs
