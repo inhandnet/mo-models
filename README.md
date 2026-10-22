@@ -13,17 +13,17 @@ Related repositories:
 
 ## Status
 
-This repository is a scaffold. The directory layout, contribution rules and the CI and release pipelines are in place; the content itself is added in stages. Each placeholder directory contains a `README.md` that describes what will be published there. Nothing in this repository is ready for production use until a release is published.
+The first catalog is in place: 12 entries in `models.json` (11 bundles shipped in Mo OS V1.1.0 plus the tutorial model), the compile and benchmark scripts published by the documentation, and the V1.1.0 compatibility baseline. Following the TI edgeai-modelzoo convention, model files are referenced through `.link` files (one URL per file) and never stored here; the source models and TI pre-compiled artifacts link to TI's public model zoo. InHand-compiled bundles have no download server yet, so their status is `pending-hosting`. Nothing in this repository is ready for production use until a release is published.
 
 ## Repository layout
 
 | Path | Purpose |
 | --- | --- |
-| `models/` | Model catalog entries. |
-| `compile/` | Model compilation scripts. |
-| `benchmarks/` | Benchmark scripts. |
-| `compat/` | Compatibility matrix. |
-| `models.json` | Machine-readable model catalog index. Empty until the first models are added. |
+| `models/` | One directory per model: README, `source-model.link`, `ti-artifact-am62a.link`. |
+| `compile/` | Host-side compilation scripts (TIDL `11_02_17_00`, pinned in mo-tools). |
+| `benchmarks/` | On-device latency script and raw result records. |
+| `compat/` | Tested board / image / TIDL / runtime baselines (`compat.json`). |
+| `models.json` | Machine-readable catalog (schema 2); validated by `scripts/validate-catalog.py` in CI. |
 | `scripts/` | Repository maintenance scripts (commit message check, changelog generation). |
 | `.githooks/` | Git hooks that run the commit message check locally. |
 | `.github/` | Issue forms, pull request template and GitHub Actions workflows. |
