@@ -157,7 +157,7 @@ Run `node scripts/check-catalog.mjs` and `node --test tests/*.test.mjs` with Nod
 
 Diagrams are generated centrally by developer/scripts/render-architecture.mjs. Regenerate all repository diagrams after changing the common architecture. Diagrams show ownership; the status section and catalog define currently available content and verification.
 
-Regenerate these diagrams from developer with `node scripts/render-architecture.mjs --repo mo-models --out /path/to/mo-models/architecture`. Catalog and documentation changes remain in the topic PR; resource consolidation, release freezing and full-site rollout have separate acceptance. Open each diagram to read the original SVG.
+Regenerate these diagrams from developer with `node scripts/render-architecture.mjs --repo mo-models --out /path/to/mo-models/architecture`. Source releases validate the catalogs and resources; developer separately verifies the combined website release and deployment. Open each diagram to read the original SVG.
 
 ## Tutorial model and evidence ownership
 
