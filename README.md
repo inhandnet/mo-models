@@ -15,14 +15,47 @@ Related repositories:
 
 [![Mo repository ownership and unified website](architecture/repository-map.en.svg)](architecture/repository-map.en.svg)
 
-| Repository | Maintained source | Delivery responsibility |
-|---|---|---|
-| **developer** · GitLab | Website components, routes, search, integration and contracts | The complete website, release composition and deployment |
-| [mo-docs](https://github.com/inhandnet/mo-docs) | Software/hardware tutorials, specifications, media, design files and training | Versioned content and reference assets |
-| [mo-tools](https://github.com/inhandnet/mo-tools) | Toolchain/SDK selection, environment setup, reusable tools and Studio | Tool metadata and source packages |
-| [mo-models](https://github.com/inhandnet/mo-models) | Model catalog, compilation resources, compatibility and raw benchmarks | Model references, evidence and artifact status |
-| [mo-examples](https://github.com/inhandnet/mo-examples) | Complete examples with related firmware, clients and configuration | Example sources and their requirements |
-| **Mo\*** · product repositories | Each product's BSP, drivers, root filesystem, image build and flashing | Product images and checksummed release metadata |
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="171" align="left">Repository</th>
+      <th width="398" align="left">Maintained source</th>
+      <th width="379" align="left">Delivery responsibility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left"><strong>developer</strong> · GitLab</td>
+      <td align="left">Website components, routes, search, integration and contracts</td>
+      <td align="left">The complete website, release composition and deployment</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://github.com/inhandnet/mo-docs">mo-docs</a></td>
+      <td align="left">Software/hardware tutorials, specifications, media, design files and training</td>
+      <td align="left">Versioned content and reference assets</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://github.com/inhandnet/mo-tools">mo-tools</a></td>
+      <td align="left">Toolchain/SDK selection, environment setup, reusable tools and Studio</td>
+      <td align="left">Tool metadata and source packages</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://github.com/inhandnet/mo-models">mo-models</a></td>
+      <td align="left">Model catalog, compilation resources, compatibility and raw benchmarks</td>
+      <td align="left">Model references, evidence and artifact status</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://github.com/inhandnet/mo-examples">mo-examples</a></td>
+      <td align="left">Complete examples with related firmware, clients and configuration</td>
+      <td align="left">Example sources and their requirements</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Mo*</strong> · product repositories</td>
+      <td align="left">Each product&#x27;s BSP, drivers, root filesystem, image build and flashing</td>
+      <td align="left">Product images and checksummed release metadata</td>
+    </tr>
+  </tbody>
+</table>
 
 `Mo*` covers independently maintained product repositories such as [Mo62A](https://github.com/inhandnet/Mo62A), Mo68A, Mo69A, Mo67A, Mo3588 and Mo3568. The framework does not fix their number. Hardware content and maintainer training move from mo-hardware into mo-docs; mo-hardware remains a historical migration source and is not a separate member of the target website composition.
 
@@ -38,17 +71,52 @@ The first catalog is in place: 12 entries in `models.json` (11 bundles shipped i
 
 ## Repository layout
 
-| Path | Purpose |
-| --- | --- |
-| `models/` | One directory per model: README, `source-model.link`, `ti-artifact-am62a.link`. |
-| `compile/` | Host-side compilation scripts (TIDL `11_02_17_00`, pinned in mo-tools). |
-| `benchmarks/` | On-device latency script and raw result records. |
-| `compat/` | Tested board / image / TIDL / runtime baselines (`compat.json`). |
-| `models.json` | Machine-readable catalog (schema 2); validated by `scripts/validate-catalog.py` in CI. |
-| `scripts/` | Repository maintenance scripts (commit message check, changelog generation). |
-| `.githooks/` | Git hooks that run the commit message check locally. |
-| `.github/` | Issue forms, pull request template and GitHub Actions workflows. |
-| `release-notes/` | Changelog baseline used by the release workflow. |
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="284" align="left">Path</th>
+      <th width="664" align="left">Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left"><code>models/</code></td>
+      <td align="left">One directory per model: README, <code>source-model.link</code>, <code>ti-artifact-am62a.link</code>.</td>
+    </tr>
+    <tr>
+      <td align="left"><code>compile/</code></td>
+      <td align="left">Host-side compilation scripts (TIDL <code>11_02_17_00</code>, pinned in mo-tools).</td>
+    </tr>
+    <tr>
+      <td align="left"><code>benchmarks/</code></td>
+      <td align="left">On-device latency script and raw result records.</td>
+    </tr>
+    <tr>
+      <td align="left"><code>compat/</code></td>
+      <td align="left">Tested board / image / TIDL / runtime baselines (<code>compat.json</code>).</td>
+    </tr>
+    <tr>
+      <td align="left"><code>models.json</code></td>
+      <td align="left">Machine-readable catalog (schema 2); validated by <code>scripts/validate-catalog.py</code> in CI.</td>
+    </tr>
+    <tr>
+      <td align="left"><code>scripts/</code></td>
+      <td align="left">Repository maintenance scripts (commit message check, changelog generation).</td>
+    </tr>
+    <tr>
+      <td align="left"><code>.githooks/</code></td>
+      <td align="left">Git hooks that run the commit message check locally.</td>
+    </tr>
+    <tr>
+      <td align="left"><code>.github/</code></td>
+      <td align="left">Issue forms, pull request template and GitHub Actions workflows.</td>
+    </tr>
+    <tr>
+      <td align="left"><code>release-notes/</code></td>
+      <td align="left">Changelog baseline used by the release workflow.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Contributing
 
