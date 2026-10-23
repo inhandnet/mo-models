@@ -101,3 +101,7 @@ Node 22 下运行 `node scripts/check-catalog.mjs` 和 `node --test tests/*.test
 框架图由 developer/scripts/render-architecture.mjs 统一生成，修改公共架构后同步生成各仓库图。图中为职责边界；当前可用目录和验证范围以状态段及目录清单为准。
 
 生成本仓库图示：在 developer 中运行 `node scripts/render-architecture.mjs --repo mo-models --out /path/to/mo-models/architecture`。本轮目录与文档仍在主题 PR 中；资源归属整理、网站发布冻结及整站上线按迁移状态分别验收。点击图示可查看原始 SVG。
+
+## 教程模型与证据
+
+[compile/zone-demo](compile/zone-demo/README.md) 维护模型获取、编译、检查脚本及 `model.py` 接口；mo-examples 按固定提交与哈希生成接口副本。基准原始记录归 `benchmarks/results/`，运行栈与 TI 二进制对比证据归 [compat/evidence](compat/evidence/MIGRATION.md)。来源、原始哈希和许可证随迁移保留。

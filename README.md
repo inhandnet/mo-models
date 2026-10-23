@@ -158,3 +158,7 @@ Run `node scripts/check-catalog.mjs` and `node --test tests/*.test.mjs` with Nod
 Diagrams are generated centrally by developer/scripts/render-architecture.mjs. Regenerate all repository diagrams after changing the common architecture. Diagrams show ownership; the status section and catalog define currently available content and verification.
 
 Regenerate these diagrams from developer with `node scripts/render-architecture.mjs --repo mo-models --out /path/to/mo-models/architecture`. Catalog and documentation changes remain in the topic PR; resource consolidation, release freezing and full-site rollout have separate acceptance. Open each diagram to read the original SVG.
+
+## Tutorial model and evidence ownership
+
+[compile/zone-demo](compile/zone-demo/README.md) owns model fetching, compilation, inspection and the `model.py` interface. Mo-examples generates its interface copy from a pinned commit and hash. Raw benchmarks live in `benchmarks/results/`; runtime-stack and TI-binary comparison evidence lives in [compat/evidence](compat/evidence/MIGRATION.md). Migration retains provenance, original hashes and licenses.
