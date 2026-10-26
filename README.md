@@ -67,9 +67,11 @@ Each source repository publishes ordinary versions. Developer alone has website 
 
 ## Status
 
-The first catalog is in place: 12 entries in `models.json` (11 bundles shipped in Mo OS V1.1.0 plus the tutorial model), the compile and benchmark scripts published by the documentation, and the V1.1.0 compatibility baseline. Following the TI edgeai-modelzoo convention, model files are referenced through `.link` files (one URL per file) and never stored here; the source models and TI pre-compiled artifacts link to TI's public model zoo. InHand-compiled bundles have no download server yet, so their status is `pending-hosting`. Catalog publication does not establish new hardware verification or model hosting.
+The first catalog is in place: 12 entries in `products/mo62a/models.json` (11 bundles shipped in Mo OS V1.1.0 plus the tutorial model), the compile and benchmark scripts published by the documentation, and the V1.1.0 compatibility baseline. Following the TI edgeai-modelzoo convention, model files are referenced through `.link` files (one URL per file) and never stored here; the source models and TI pre-compiled artifacts link to TI's public model zoo. InHand-compiled bundles have no download server yet, so their status is `pending-hosting`. Catalog publication does not establish new hardware verification or model hosting.
 
 ## Repository layout
+
+Product directories: `products.json` lists the boards; each board keeps its own content under `products/<board>/` (`products/mo62a/` for Mo62A, `products/mo68a/` reserved for Mo68A). Boards do not share files; catalog paths are relative to the product directory.
 
 <table width="100%">
   <thead>
@@ -80,23 +82,23 @@ The first catalog is in place: 12 entries in `models.json` (11 bundles shipped i
   </thead>
   <tbody>
     <tr>
-      <td align="left"><code>models/</code></td>
+      <td align="left"><code>products/mo62a/models/</code></td>
       <td align="left">One directory per model: README, <code>source-model.link</code>, <code>ti-artifact-am62a.link</code>.</td>
     </tr>
     <tr>
-      <td align="left"><code>compile/</code></td>
+      <td align="left"><code>products/mo62a/compile/</code></td>
       <td align="left">Host-side compilation scripts (TIDL <code>11_02_17_00</code>, pinned in mo-tools).</td>
     </tr>
     <tr>
-      <td align="left"><code>benchmarks/</code></td>
+      <td align="left"><code>products/mo62a/benchmarks/</code></td>
       <td align="left">On-device latency script and raw result records.</td>
     </tr>
     <tr>
-      <td align="left"><code>compat/</code></td>
+      <td align="left"><code>products/mo62a/compat/</code></td>
       <td align="left">Tested board / image / TIDL / runtime baselines (<code>compat.json</code>).</td>
     </tr>
     <tr>
-      <td align="left"><code>models.json</code></td>
+      <td align="left"><code>products/mo62a/models.json</code></td>
       <td align="left">Machine-readable catalog (schema 2); validated by <code>scripts/validate-catalog.py</code> in CI.</td>
     </tr>
     <tr>
@@ -151,7 +153,7 @@ This repository is licensed under the terms in [LICENSE](LICENSE). Third-party c
 
 ## Unified website integration
 
-`models.json` and `compat/compat.json` own model inventory, source references, compatibility and measured evidence. `pending-hosting`, `inventory`, `tutorial` and `audited-latency` remain distinct. Developer reads a pinned source revision, validates the combined data, and renders the website; this repository has no documentation-site frontend or website deployment.
+`products/mo62a/models.json` and `products/mo62a/compat/compat.json` own model inventory, source references, compatibility and measured evidence. `pending-hosting`, `inventory`, `tutorial` and `audited-latency` remain distinct. Developer reads a pinned source revision, validates the combined data, and renders the website; this repository has no documentation-site frontend or website deployment.
 
 Run `node scripts/check-catalog.mjs` and `node --test tests/*.test.mjs` with Node 22. `validation/` is exported from a committed developer contract and checked by hash; do not edit it locally. For integrated preview, run developer's `npm run preview -- --source mo-models=/path/to/mo-models`.
 
@@ -161,4 +163,4 @@ Regenerate these diagrams from developer with `node scripts/render-architecture.
 
 ## Tutorial model and evidence ownership
 
-[compile/zone-demo](compile/zone-demo/README.md) owns model fetching, compilation, inspection and the `model.py` interface. Mo-examples generates its interface copy from a pinned commit and hash. Raw benchmarks live in `benchmarks/results/`; runtime-stack and TI-binary comparison evidence lives in [compat/evidence](compat/evidence/MIGRATION.md). Migration retains provenance, original hashes and licenses.
+[products/mo62a/compile/zone-demo](products/mo62a/compile/zone-demo/README.md) owns model fetching, compilation, inspection and the `model.py` interface. Mo-examples generates its interface copy from a pinned commit and hash. Raw benchmarks live in `products/mo62a/benchmarks/results/`; runtime-stack and TI-binary comparison evidence lives in [products/mo62a/compat/evidence](products/mo62a/compat/evidence/MIGRATION.md). Migration retains provenance, original hashes and licenses.

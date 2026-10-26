@@ -10,7 +10,7 @@ Reproducible on-device latency measurements for catalog models.
 Run on the board:
 
 ```bash
-sudo python3 benchmarks/benchmark-inference.py \
+sudo python3 products/mo62a/benchmarks/benchmark-inference.py \
   /opt/model_zoo/ONR-OD-8200-yolox-nano-lite-mmdet-coco-416x416 \
   --runs 100 --warmup 5 --output nano.json
 ```

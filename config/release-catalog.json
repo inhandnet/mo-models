@@ -3,7 +3,8 @@
   "repository": "inhandnet/mo-models",
   "kind": "models",
   "catalogs": [
-    "models.json",
-    "compat/compat.json"
+    "products.json",
+    "products/mo62a/models.json",
+    "products/mo62a/compat/compat.json"
   ]
 }
