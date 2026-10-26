@@ -5,7 +5,7 @@ import {readFile, readdir} from 'node:fs/promises';
 const read = file => readFile(new URL('../' + file, import.meta.url), 'utf8');
 
 test('Mo62A stack evidence distinguishes target imports from TI reference packages', async () => {
-  const inventory = JSON.parse(await read('compat/evidence/mo62a-v110-stack-inventory.json'));
+  const inventory = JSON.parse(await read('products/mo62a/compat/evidence/mo62a-v110-stack-inventory.json'));
   assert.equal(inventory.checks.length, 5);
   assert.ok(inventory.checks.every(check => check.exit_code === 0));
   const imports = inventory.checks.find(check => check.name === 'python-runtimes').output;
@@ -19,7 +19,7 @@ test('Mo62A stack evidence distinguishes target imports from TI reference packag
 });
 
 test('selected firmware and all five target libraries match exact TI archives', async () => {
-  const report = JSON.parse(await read('compat/evidence/mo62a-v110-ti-binary-comparison.json'));
+  const report = JSON.parse(await read('products/mo62a/compat/evidence/mo62a-v110-ti-binary-comparison.json'));
   assert.equal(report.ti_release, '11_02_17_00');
   assert.equal(report.comparisons.length, 6);
   assert.equal(new Set(report.comparisons.map(row => row.target_path)).size, 6);

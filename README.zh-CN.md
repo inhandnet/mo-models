@@ -62,14 +62,16 @@ InHand Mo 系列单板计算机的 AI 模型清单、模型编译脚本与可复
 
 ## 状态
 
-首版清单已就位：`models.json` 共 12 条（Mo OS V1.1.0 镜像内置的 11 个模型包与教程模型），以及文档已发布的编译脚本、基准脚本和 V1.1.0 兼容基线。参照 TI edgeai-modelzoo 的做法，模型文件一律通过 `.link` 文件（每文件一行 URL）引用，仓库不存模型二进制；源模型与 TI 预编译产物指向 TI 公开模型库。InHand 自编译的模型包尚无下载服务器，状态标记为 `pending-hosting`。目录发布不增加实机验证或模型托管能力。
+首版清单已就位：`products/mo62a/models.json` 共 12 条（Mo OS V1.1.0 镜像内置的 11 个模型包与教程模型），以及文档已发布的编译脚本、基准脚本和 V1.1.0 兼容基线。参照 TI edgeai-modelzoo 的做法，模型文件一律通过 `.link` 文件（每文件一行 URL）引用，仓库不存模型二进制；源模型与 TI 预编译产物指向 TI 公开模型库。InHand 自编译的模型包尚无下载服务器，状态标记为 `pending-hosting`。目录发布不增加实机验证或模型托管能力。
 
 ## 目录结构
 
-- `models/` — 每个模型一个目录：README、`source-model.link`、`ti-artifact-am62a.link`
-- `compile/` — 主机侧编译脚本（TIDL `11_02_17_00`，版本钉定见 mo-tools）
-- `benchmarks/` — 板上时延脚本与原始结果记录
-- `compat/` — 已验证的板卡 / 镜像 / TIDL / 运行时基线（`compat.json`）
+产品目录：`products.json` 列出产品，每个产品的内容放在 `products/<产品>/`（Mo62A 为 `products/mo62a/`，Mo68A 为预留的 `products/mo68a/`）。不同产品不共用文件，路径均相对于各自产品目录。
+
+- `products/mo62a/models/` — 每个模型一个目录：README、`source-model.link`、`ti-artifact-am62a.link`
+- `products/mo62a/compile/` — 主机侧编译脚本（TIDL `11_02_17_00`，版本钉定见 mo-tools）
+- `products/mo62a/benchmarks/` — 板上时延脚本与原始结果记录
+- `products/mo62a/compat/` — 已验证的板卡 / 镜像 / TIDL / 运行时基线（`compat.json`）
 - `scripts/` — 仓库维护脚本（提交信息检查、变更记录生成）
 - `.githooks/` — 本地提交信息检查钩子
 - `.github/` — Issue 表单、PR 模板与 GitHub Actions 工作流
@@ -94,7 +96,7 @@ InHand Mo 系列单板计算机的 AI 模型清单、模型编译脚本与可复
 
 ## 统一网站接入
 
-models.json 和 compat/compat.json 维护模型目录、来源、配套和实测证据；库存、教程、已审计时延和待托管状态保持区分。 developer 固定源码版本后统一校验和渲染，本仓库不部署文档网站。
+products/mo62a/models.json 和 products/mo62a/compat/compat.json 维护模型目录、来源、配套和实测证据；库存、教程、已审计时延和待托管状态保持区分。 developer 固定源码版本后统一校验和渲染，本仓库不部署文档网站。
 
 Node 22 下运行 `node scripts/check-catalog.mjs` 和 `node --test tests/*.test.mjs`。validation/ 是 developer 已提交规则的固定副本，通过哈希核验，不手工编辑。集成预览在 developer 中运行 `npm run preview -- --source mo-models=/path/to/mo-models`。
 
@@ -104,4 +106,4 @@ Node 22 下运行 `node scripts/check-catalog.mjs` 和 `node --test tests/*.test
 
 ## 教程模型与证据
 
-[compile/zone-demo](compile/zone-demo/README.md) 维护模型获取、编译、检查脚本及 `model.py` 接口；mo-examples 按固定提交与哈希生成接口副本。基准原始记录归 `benchmarks/results/`，运行栈与 TI 二进制对比证据归 [compat/evidence](compat/evidence/MIGRATION.md)。来源、原始哈希和许可证随迁移保留。
+[products/mo62a/compile/zone-demo](products/mo62a/compile/zone-demo/README.md) 维护模型获取、编译、检查脚本及 `model.py` 接口；mo-examples 按固定提交与哈希生成接口副本。基准原始记录归 `products/mo62a/benchmarks/results/`，运行栈与 TI 二进制对比证据归 [products/mo62a/compat/evidence](products/mo62a/compat/evidence/MIGRATION.md)。来源、原始哈希和许可证随迁移保留。
