@@ -30,6 +30,36 @@
         "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_17_00/FIRMWARES/AM62A/edgeai/11_1/firmware.tar.gz",
         "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_17_00/FIRMWARES/AM62A/edgeai/11_1/tidl_lib.tar.gz"
       ]
+    },
+    {
+      "board": "mo-62a",
+      "image": "V1.1.1",
+      "os": "Debian 13, Linux 6.12.35",
+      "board_python": "3.13.5",
+      "tidl": "11_02_17_00",
+      "target_firmware_dir": "edgeai/11_1",
+      "c7x_firmware": "am62a-c71_0-fw",
+      "ti_onnxruntime": "1.23.0",
+      "tflite_runtime": "2.12.1",
+      "tvm": "0.18.0",
+      "dlr": "1.13.0",
+      "ti_gstreamer_plugins": "0.7.0",
+      "vision_apps_library": "11.1.0",
+      "host_toolchain": {
+        "repository": "https://github.com/TexasInstruments/edgeai-tidl-tools",
+        "tag": "11_02_17_00",
+        "commit": "d2be7203e5680298d7f54bcbd38e299d1bc22bfd",
+        "compiler_release": "REL.TIDL.11.02.17.00",
+        "host_python": "3.10",
+        "am62a_sdk_baseline": "11.01.07.05"
+      },
+      "ti_modelzoo_version": "11_02_00",
+      "model_bundles": "models.json entries with images containing V1.1.1",
+      "firmware_archives": [
+        "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_17_00/FIRMWARES/AM62A/edgeai/11_1/firmware.tar.gz",
+        "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_17_00/FIRMWARES/AM62A/edgeai/11_1/tidl_lib.tar.gz"
+      ],
+      "source": "Mo62A V1.1.1 hardware validation on 2026-10-27: Python, ONNX Runtime, TFLite Runtime, TVM, DLR, C7x firmware and vision apps library read on the board; /opt/model_zoo, the base root filesystem and the TIDL stack are unchanged from V1.1.0 in the Mo62A source; GStreamer plugin and host toolchain values carried from V1.1.0"
     }
   ]
 }

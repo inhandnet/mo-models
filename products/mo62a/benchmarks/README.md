@@ -6,6 +6,7 @@ Reproducible on-device latency measurements for catalog models.
 |---|---|
 | `benchmark-inference.py` | Measures synchronous ONNX Runtime `session.run` calls with blank input on the board: `--warmup` calls are discarded, then `--runs` samples are recorded with mean, median, P95, min, max, CPU frequency and thermal readings before and after. It is not an accuracy or end-to-end video FPS test. |
 | `results/mo62a-v110-tidl-11_02_17_00/` | Raw records from the mo-docs audit of a Mo OS V1.1.0 board: `benchmark-nano.json` (ONR-OD-8200, mean 10.900 ms) and `benchmark-small.json` (ONR-OD-8220, mean 40.402 ms), 100 samples after 5 warm-up calls, ONNX Runtime 1.23.0, kernel 6.12.35, 329/329 nodes offloaded. The `model_sha256` in each record matches the ONNX file of the shipped bundle. |
+| `results/mo62a-v111-tidl-11_02_17_00/` | Raw records from the Mo62A V1.1.1 hardware validation on 2026-10-27, same method: `benchmark-nano.json` (ONR-OD-8200, mean 10.897 ms) and `benchmark-small.json` (ONR-OD-8220, mean 40.433 ms), ONNX Runtime 1.23.0, kernel 6.12.35. The `model_sha256` values equal the V1.1.0 records, so the shipped bundles are unchanged. |
 
 Run on the board:
 
