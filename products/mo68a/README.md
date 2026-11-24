@@ -1,4 +1,4 @@
 # Mo68A
 
-Planned. Mo68A model catalog, compilation recipes, compatibility baselines and benchmark records will be added here once validated on Mo68A;
-Mo62A files are not reused for this board.
+Mo68A model catalog, compilation recipes and benchmark records. Paths in the catalogs are relative to this directory.
+Nothing here is assumed to apply to another board.
