@@ -34,11 +34,18 @@ parser.add_argument("--warmup", type=int, default=5, metavar="N",
 parser.add_argument("--threads", type=int, default=2, metavar="N",
                     help="ONNX Runtime threads, --cpu only. J721S2 has two A72 "
                          "cores; more than that is slower, not faster (default: %(default)s)")
+parser.add_argument("--id", metavar="NAME",
+                    help="name the record under; the default is the model id in the "
+                         "bundle's source.json, else the directory name")
 parser.add_argument("--output", type=Path, metavar="FILE",
                     help="where to write the record (default: <model>-<target>.json)")
 parser.add_argument("--verbose", action="store_true",
                     help="also show the firmware and execution-provider output")
 args = parser.parse_args()
+
+# model_sha256 says what ran, source.json says what it was compiled from.
+provenance = args.model_dir / "source.json"
+provenance = json.loads(provenance.read_text()) if provenance.is_file() else {}
 
 # Validate before touching the runtime, and say which input is wrong: these
 # messages are the only thing between the user and a 30-line firmware dump.
@@ -159,7 +166,9 @@ if _capture:
         subgraphs = int(count.group(1))
 
 report = {
-    "model": args.model_dir.name, "model_sha256": hashlib.sha256(models[0].read_bytes()).hexdigest(),
+    "model": args.id or provenance.get("model_id") or args.model_dir.name,
+    "model_sha256": hashlib.sha256(models[0].read_bytes()).hexdigest(),
+    "source_sha256": provenance.get("sha256"),
     "kernel": platform.release(), "onnxruntime": ort.__version__, "providers": session.get_providers(),
     "backend": "cpu-a72" if args.cpu else "tidl-c7x",
     "cpu_threads": args.threads if args.cpu else None,
@@ -193,11 +202,15 @@ if total is None and meta.exists():
 if args.cpu:
     offloaded, subgraphs = 0, None
 
-catalog = re.match(r"^[a-z]{2}-\d{4}", report["model"])
+catalog = re.match(r"^[a-z]{2}-\d{4}", args.model_dir.name)
 block("model")
 if catalog:
     field("id", catalog.group(0))
-field("bundle", report["model"])
+field("bundle", args.model_dir.name)
+if report["model"] != args.model_dir.name:
+    field("recorded as", report["model"])
+if not provenance:
+    field("provenance", "no source.json; the record cannot name a source model")
 for shape in shapes:
     field("input tensor", shape)
 field("graph", models[0].name)
