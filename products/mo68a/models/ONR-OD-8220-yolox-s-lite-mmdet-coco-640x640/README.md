@@ -19,7 +19,7 @@ Compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the
 
 | Mean | Median | P95 | Samples |
 |---|---|---|---|
-| 13.213 ms | 13.199 ms | 13.311 ms | 100 after 5 warm-up calls |
+| 13.358 ms | 13.236 ms | 13.888 ms | 100 after 5 warm-up calls |
 
 Scope: wall-clock synchronous session.run; excludes pre/post-processing and session creation. ONNX Runtime 1.23.0, kernel 6.12.35-vendor-k3-mo68a. Raw record: [`od-8220-c7x.json`](../../benchmarks/results/mo68a-v105-tidl-11_02_17_00/od-8220-c7x.json). Blank input; this is not accuracy or end-to-end video FPS.
 

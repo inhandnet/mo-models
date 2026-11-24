@@ -18,108 +18,6 @@
   },
   "models": [
     {
-      "id": "TFL-CL-0000-mobileNetV1-mlperf",
-      "ti_id": "cl-0000_tflitert",
-      "ti_run_dir": "cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite",
-      "task": "classification",
-      "task_label": "Image classification",
-      "runtime": "tflitert",
-      "dataset": "ImageNet-1k",
-      "input": "224x224 (resize 256, centre crop 224)",
-      "boards": [
-        "mo-62a"
-      ],
-      "images": [
-        "V1.1.0",
-        "V1.1.1"
-      ],
-      "tidl": "11_02_17_00",
-      "compiled_by": "inhand",
-      "source": {
-        "type": "ti-modelzoo",
-        "version": "11_02_00",
-        "file": "mobilenet_v1_1.0_224.tflite",
-        "sha256": "d95b3c5ea86750cef882fa867ca357dfe4d265d0b80b67e83277a0bda310cfbb",
-        "size_bytes": 16901128,
-        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/classification/imagenet1k/mlperf/mobilenet_v1_1.0_224.tflite",
-        "link": "models/TFL-CL-0000-mobileNetV1-mlperf/source-model.link",
-        "modelzoo_path": "edgeai-modelzoo/models/vision/classification/imagenet1k/mlperf/mobilenet_v1_1.0_224.tflite",
-        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
-        "license_urls": [
-          "https://github.com/TexasInstruments/edgeai-tensorlab/blob/f272548ef0fe96046f1bf2c3833e040a1ecf8e44/edgeai-modelzoo/models/vision/classification/imagenet1k/mlperf/LICENSE.md"
-        ]
-      },
-      "upstream_artifact": {
-        "type": "ti-modelzoo",
-        "soc": "AM62A",
-        "quantization": "8bits",
-        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM62A/8bits/cl-0000_tflitert_imagenet1k_mlperf_mobilenet_v1_1.0_224_tflite.tar.gz",
-        "link": "models/TFL-CL-0000-mobileNetV1-mlperf/ti-artifact-am62a.link",
-        "size_bytes": 19589032,
-        "verified_on_mo62a": false
-      },
-      "artifact": {
-        "hosting": "image",
-        "image_path": "/opt/model_zoo/TFL-CL-0000-mobileNetV1-mlperf",
-        "download_url": null,
-        "status": "pending-hosting"
-      },
-      "verification": "inventory",
-      "latency": null,
-      "notes": "Shipped in the Mo OS V1.1.0 image as a bundle compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo62A. Carried over from the Mo62A catalogue and not yet part of the Mo68A set: these fields still hold Mo62A values."
-    },
-    {
-      "id": "ONR-CL-6360-regNetx-200mf",
-      "ti_id": "cl-6360_onnxrt",
-      "ti_run_dir": "cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx",
-      "task": "classification",
-      "task_label": "Image classification",
-      "runtime": "onnxrt",
-      "dataset": "ImageNet-1k",
-      "input": "224x224 (resize 256, centre crop 224)",
-      "boards": [
-        "mo-62a"
-      ],
-      "images": [
-        "V1.1.0",
-        "V1.1.1"
-      ],
-      "tidl": "11_02_17_00",
-      "compiled_by": "inhand",
-      "source": {
-        "type": "ti-modelzoo",
-        "version": "11_02_00",
-        "file": "regnetx-200mf.onnx",
-        "sha256": "ecc54c9cdbb9b387534ff0de6ca0b1422ba84966aab57fc472739103f1629e7d",
-        "size_bytes": 10850835,
-        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/classification/imagenet1k/fbr-pycls/regnetx-200mf.onnx",
-        "link": "models/ONR-CL-6360-regNetx-200mf/source-model.link",
-        "modelzoo_path": "edgeai-modelzoo/models/vision/classification/imagenet1k/fbr-pycls/regnetx-200mf.onnx",
-        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
-        "license_urls": [
-          "https://github.com/TexasInstruments/edgeai-tensorlab/blob/f272548ef0fe96046f1bf2c3833e040a1ecf8e44/edgeai-modelzoo/models/vision/classification/imagenet1k/fbr-pycls/LICENSE"
-        ]
-      },
-      "upstream_artifact": {
-        "type": "ti-modelzoo",
-        "soc": "AM62A",
-        "quantization": "8bits",
-        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM62A/8bits/cl-6360_onnxrt_imagenet1k_fbr-pycls_regnetx-200mf_onnx.tar.gz",
-        "link": "models/ONR-CL-6360-regNetx-200mf/ti-artifact-am62a.link",
-        "size_bytes": 12696036,
-        "verified_on_mo62a": false
-      },
-      "artifact": {
-        "hosting": "image",
-        "image_path": "/opt/model_zoo/ONR-CL-6360-regNetx-200mf",
-        "download_url": null,
-        "status": "pending-hosting"
-      },
-      "verification": "inventory",
-      "latency": null,
-      "notes": "Shipped in the Mo OS V1.1.0 image as a bundle compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo62A. Carried over from the Mo62A catalogue and not yet part of the Mo68A set: these fields still hold Mo62A values."
-    },
-    {
       "id": "ONR-KD-7060-human-pose-yolox-s-640x640",
       "ti_id": "kd-7060_onnxrt",
       "ti_run_dir": "kd-7060_onnxrt_coco_edgeai-yolox_yolox_s_pose_ti_lite_640_20220301_model_onnx",
@@ -129,7 +27,7 @@
       "dataset": "COCO",
       "input": "640x640",
       "boards": [
-        "mo68a"
+        "mo-68a"
       ],
       "images": [
         "V1.0.5",
@@ -163,14 +61,15 @@
       "artifact": {
         "hosting": "pending",
         "image_path": null,
+        "model_sha256": "576b23065b6ad0ba74d54b4774c821bb753962ccd8b250992fd84af377d8cc45",
         "download_url": null,
         "status": "pending-hosting"
       },
       "verification": "audited-latency",
       "latency": {
-        "mean_ms": 14.182,
-        "median_ms": 14.099,
-        "p95_ms": 14.331,
+        "mean_ms": 14.103,
+        "median_ms": 13.953,
+        "p95_ms": 14.62,
         "runs": 100,
         "warmup": 5,
         "onnxruntime": "1.23.0",
@@ -179,57 +78,6 @@
         "record": "benchmarks/results/mo68a-v105-tidl-11_02_17_00/kd-7060-c7x.json"
       },
       "notes": "Compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo68A."
-    },
-    {
-      "id": "TFL-OD-2020-ssdLite-mobDet-DSP-coco-320x320",
-      "ti_id": "od-2020_tflitert",
-      "ti_run_dir": "od-2020_tflitert_coco_tf1-models_ssdlite_mobiledet_dsp_320x320_coco_20200519_tflite",
-      "task": "detection",
-      "task_label": "Object detection",
-      "runtime": "tflitert",
-      "dataset": "COCO",
-      "input": "320x320",
-      "boards": [
-        "mo-62a"
-      ],
-      "images": [
-        "V1.1.0",
-        "V1.1.1"
-      ],
-      "tidl": "11_02_17_00",
-      "compiled_by": "inhand",
-      "source": {
-        "type": "ti-modelzoo",
-        "version": "11_02_00",
-        "file": "ssdlite_mobiledet_dsp_320x320_coco_20200519.tflite",
-        "sha256": "d84dc622edb3129b869521dafec2e0a21f9dda4c569de8209d71c0bb8f5c6309",
-        "size_bytes": 28396608,
-        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/detection/coco/tf1-models/ssdlite_mobiledet_dsp_320x320_coco_20200519.tflite",
-        "link": "models/TFL-OD-2020-ssdLite-mobDet-DSP-coco-320x320/source-model.link",
-        "modelzoo_path": "edgeai-modelzoo/models/vision/detection/coco/tf1-models/ssdlite_mobiledet_dsp_320x320_coco_20200519.tflite",
-        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
-        "license_urls": [
-          "https://github.com/TexasInstruments/edgeai-tensorlab/blob/f272548ef0fe96046f1bf2c3833e040a1ecf8e44/edgeai-modelzoo/models/vision/detection/coco/tf1-models/LICENSE"
-        ]
-      },
-      "upstream_artifact": {
-        "type": "ti-modelzoo",
-        "soc": "AM62A",
-        "quantization": "8bits",
-        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM62A/8bits/od-2020_tflitert_coco_tf1-models_ssdlite_mobiledet_dsp_320x320_coco_20200519_tflite.tar.gz",
-        "link": "models/TFL-OD-2020-ssdLite-mobDet-DSP-coco-320x320/ti-artifact-am62a.link",
-        "size_bytes": 33329529,
-        "verified_on_mo62a": false
-      },
-      "artifact": {
-        "hosting": "image",
-        "image_path": "/opt/model_zoo/TFL-OD-2020-ssdLite-mobDet-DSP-coco-320x320",
-        "download_url": null,
-        "status": "pending-hosting"
-      },
-      "verification": "inventory",
-      "latency": null,
-      "notes": "Shipped in the Mo OS V1.1.0 image as a bundle compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo62A. Carried over from the Mo62A catalogue and not yet part of the Mo68A set: these fields still hold Mo62A values."
     },
     {
       "id": "ONR-OD-8020-ssd-lite-mobv2-mmdet-coco-512x512",
@@ -241,7 +89,7 @@
       "dataset": "COCO",
       "input": "512x512",
       "boards": [
-        "mo68a"
+        "mo-68a"
       ],
       "images": [
         "V1.0.5",
@@ -275,14 +123,15 @@
       "artifact": {
         "hosting": "pending",
         "image_path": null,
+        "model_sha256": "9897cf19259f1affe32aa111dc7decbbf299b367b5b1ac7ddce89f1e8d0dd5fd",
         "download_url": null,
         "status": "pending-hosting"
       },
       "verification": "audited-latency",
       "latency": {
-        "mean_ms": 8.433,
-        "median_ms": 8.429,
-        "p95_ms": 8.511,
+        "mean_ms": 8.456,
+        "median_ms": 8.244,
+        "p95_ms": 9.154,
         "runs": 100,
         "warmup": 5,
         "onnxruntime": "1.23.0",
@@ -302,7 +151,7 @@
       "dataset": "COCO",
       "input": "416x416",
       "boards": [
-        "mo68a"
+        "mo-68a"
       ],
       "images": [
         "V1.0.5",
@@ -336,14 +185,15 @@
       "artifact": {
         "hosting": "pending",
         "image_path": null,
+        "model_sha256": "e68ff9b757d60eae794344101185b31e1e5d48d33302becc4f3bb90665ae0797",
         "download_url": null,
         "status": "pending-hosting"
       },
       "verification": "audited-latency",
       "latency": {
-        "mean_ms": 5.129,
-        "median_ms": 5.119,
-        "p95_ms": 5.212,
+        "mean_ms": 5.147,
+        "median_ms": 5.131,
+        "p95_ms": 5.23,
         "runs": 100,
         "warmup": 5,
         "onnxruntime": "1.23.0",
@@ -363,7 +213,7 @@
       "dataset": "COCO",
       "input": "640x640",
       "boards": [
-        "mo68a"
+        "mo-68a"
       ],
       "images": [
         "V1.0.5",
@@ -397,14 +247,15 @@
       "artifact": {
         "hosting": "pending",
         "image_path": null,
+        "model_sha256": "ccc57b2fa3a3b3487ba140eb3a90d6159187bde5bd1496721fd3f57449836460",
         "download_url": null,
         "status": "pending-hosting"
       },
       "verification": "audited-latency",
       "latency": {
-        "mean_ms": 13.213,
-        "median_ms": 13.199,
-        "p95_ms": 13.311,
+        "mean_ms": 13.358,
+        "median_ms": 13.236,
+        "p95_ms": 13.888,
         "runs": 100,
         "warmup": 5,
         "onnxruntime": "1.23.0",
@@ -424,7 +275,7 @@
       "dataset": "WIDER FACE",
       "input": "640x640",
       "boards": [
-        "mo68a"
+        "mo-68a"
       ],
       "images": [
         "V1.0.5",
@@ -456,14 +307,15 @@
       "artifact": {
         "hosting": "pending",
         "image_path": null,
+        "model_sha256": "f0581525763a8a386f837056d67b3953eb418cdca3cdbbfa50ba4c6f16216226",
         "download_url": null,
         "status": "pending-hosting"
       },
       "verification": "audited-latency",
       "latency": {
-        "mean_ms": 11.664,
-        "median_ms": 11.664,
-        "p95_ms": 11.721,
+        "mean_ms": 11.805,
+        "median_ms": 11.688,
+        "p95_ms": 12.086,
         "runs": 100,
         "warmup": 5,
         "onnxruntime": "1.23.0",
@@ -483,7 +335,7 @@
       "dataset": "TI Robokit",
       "input": "768x432",
       "boards": [
-        "mo68a"
+        "mo-68a"
       ],
       "images": [
         "V1.0.5",
@@ -517,14 +369,15 @@
       "artifact": {
         "hosting": "pending",
         "image_path": null,
+        "model_sha256": "feef56d45457d498d8ee4773fe67d467d1989a9c926ed53322086d9ea1c13bee",
         "download_url": null,
         "status": "pending-hosting"
       },
       "verification": "audited-latency",
       "latency": {
-        "mean_ms": 17.568,
-        "median_ms": 17.182,
-        "p95_ms": 20.067,
+        "mean_ms": 17.141,
+        "median_ms": 16.886,
+        "p95_ms": 18.198,
         "runs": 100,
         "warmup": 5,
         "onnxruntime": "1.23.0",
@@ -544,7 +397,7 @@
       "dataset": "ADE20K (32 classes)",
       "input": "512x512",
       "boards": [
-        "mo68a"
+        "mo-68a"
       ],
       "images": [
         "V1.0.5",
@@ -576,14 +429,15 @@
       "artifact": {
         "hosting": "pending",
         "image_path": null,
+        "model_sha256": "83a2e263bb7fa9558318eb88bc29ec8406c449ae0dbde55da78eb73d898606fe",
         "download_url": null,
         "status": "pending-hosting"
       },
       "verification": "audited-latency",
       "latency": {
-        "mean_ms": 11.002,
-        "median_ms": 10.998,
-        "p95_ms": 11.07,
+        "mean_ms": 10.98,
+        "median_ms": 10.977,
+        "p95_ms": 11.038,
         "runs": 100,
         "warmup": 5,
         "onnxruntime": "1.23.0",
@@ -603,7 +457,7 @@
       "dataset": "ADE20K (32 classes)",
       "input": "384x384",
       "boards": [
-        "mo68a"
+        "mo-68a"
       ],
       "images": [
         "V1.0.5",
@@ -635,14 +489,15 @@
       "artifact": {
         "hosting": "pending",
         "image_path": null,
+        "model_sha256": "3bbd2b77a4a9bbcd697dc89a0f1a4038e86fbed801a5ef41b069c8802698df84",
         "download_url": null,
         "status": "pending-hosting"
       },
       "verification": "audited-latency",
       "latency": {
-        "mean_ms": 9.66,
-        "median_ms": 9.656,
-        "p95_ms": 9.721,
+        "mean_ms": 9.944,
+        "median_ms": 9.652,
+        "p95_ms": 11.923,
         "runs": 100,
         "warmup": 5,
         "onnxruntime": "1.23.0",
@@ -662,7 +517,7 @@
       "dataset": "COCO",
       "input": "416x416",
       "boards": [
-        "mo68a"
+        "mo-68a"
       ],
       "images": [
         "V1.0.5",
