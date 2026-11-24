@@ -1,4 +1,4 @@
-"""Compile the unchanged official 8210 model with the pinned x86 AM62A toolchain."""
+"""Compile the unchanged official 8210 model with the pinned x86 J721S2 toolchain."""
 import argparse
 import json
 import os
@@ -18,8 +18,8 @@ parser.add_argument('--iterations', type=int, default=3)
 args = parser.parse_args()
 bundle = args.bundle.resolve()
 check_sources(bundle)
-if platform.machine() != 'x86_64' or os.environ.get('SOC') != 'AM62A':
-    raise RuntimeError('Compile on x86_64 with SOC=AM62A')
+if platform.machine() != 'x86_64' or os.environ.get('SOC') != 'J721S2':
+    raise RuntimeError('Compile on x86_64 with SOC=J721S2')
 tools = Path(os.environ['TIDL_TOOLS_PATH']).resolve()
 if 'REL.TIDL.11.02.17.00' not in (tools / 'version.txt').read_text():
     raise RuntimeError('Compiler baseline differs')
@@ -65,7 +65,7 @@ networks, io = list((bundle / 'artifacts').glob('*_net.bin')), list((bundle / 'a
 if not networks or len(networks) != len(io):
     raise RuntimeError('Incomplete network/IO artifacts')
 files = sorted([*(bundle / 'model').iterdir(), *(bundle / 'artifacts').iterdir()])
-record = {'soc': 'AM62A', 'tidl_release': '11_02_17_00',
+record = {'soc': 'J721S2', 'tidl_release': '11_02_17_00',
           'tool_source_commit': 'd2be7203e5680298d7f54bcbd38e299d1bc22bfd',
           'compiler_version': (tools / 'version.txt').read_text(), 'host_python': platform.python_version(),
           'onnxruntime': ort.__version__, 'model_id': 'od-8210',

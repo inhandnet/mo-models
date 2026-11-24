@@ -74,7 +74,7 @@ def check_sources(bundle):
 def verify_bundle(bundle):
     check_sources(bundle)
     manifest = json.loads((bundle / 'bundle.json').read_text())
-    if manifest['soc'] != 'AM62A' or manifest['tidl_release'] != '11_02_17_00':
+    if manifest['soc'] != 'J721S2' or manifest['tidl_release'] != '11_02_17_00':
         raise ValueError('Unexpected bundle compatibility baseline')
     for name, expected in manifest['files'].items():
         path = (bundle / name).resolve()
