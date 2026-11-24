@@ -1,5 +1,9 @@
 # TFL-CL-0000-mobileNetV1-mlperf
 
+> **Not yet part of the Mo68A set.** This entry is carried over from the
+> Mo62A catalogue and every field below still holds its Mo62A value. It is
+> replaced once the model is compiled and measured on Mo68A.
+
 | Field | Value |
 |---|---|
 | Task | Image classification (ImageNet-1k) |
