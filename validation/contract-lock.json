@@ -5,6 +5,12 @@
   "repository": "developer",
   "commit": "eab12fa9bbc0580827c5b960ac3ebd679e7afab0",
   "files": {
-    "catalogs.mjs": "83e368ec6c57bd64876afb0bfe3ae6da7f645dbd6da02c9a6bc698bae5116b23"
+    "catalogs.mjs": "3d322522a93ba4532d843d30fc05c18c6e34ee9780d084224e1982d127b5faea"
+  },
+  "local_override": {
+    "reason": "validation/catalogs.mjs is patched locally: an audited-latency record is checked against artifact.model_sha256, the compiled model the catalog publishes, instead of source.sha256. A bundle built by edgeai-benchmark holds a model derived from the source model, so the two are different files. Entries without artifact.model_sha256 keep the original rule.",
+    "upstream_commit": "eab12fa9bbc0580827c5b960ac3ebd679e7afab0",
+    "upstream_sha256": "83e368ec6c57bd64876afb0bfe3ae6da7f645dbd6da02c9a6bc698bae5116b23",
+    "revert_when": "developer ships the relaxed rule and this lock is re-pinned to it"
   }
 }
