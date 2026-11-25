@@ -1,0 +1,555 @@
+{
+  "schema_version": 2,
+  "generated_from": {
+    "image": "Mo 68A V1.0.6 /opt/model_zoo inventory",
+    "ti_modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
+    "ti_artifacts_index": "edgeai-modelzoo/modelartifacts/AM68A/8bits/artifacts.csv",
+    "source_checksums_verified": "2026-11-24 against software-dl.ti.com; TI replaces files in place under the same URL, so these are a snapshot rather than a permanent identity"
+  },
+  "status_values": {
+    "verification": {
+      "inventory": "present in the image; not re-measured",
+      "audited-latency": "raw timing record published",
+      "tutorial": "built by a documented tutorial, not shipped in the image"
+    },
+    "artifact.status": {
+      "pending-hosting": "no InHand download server yet; do not publish a URL"
+    }
+  },
+  "models": [
+    {
+      "id": "ONR-KD-7060-human-pose-yolox-s-640x640",
+      "ti_id": "kd-7060_onnxrt",
+      "ti_run_dir": "kd-7060_onnxrt_coco_edgeai-yolox_yolox_s_pose_ti_lite_640_20220301_model_onnx",
+      "task": "keypoint_detection",
+      "task_label": "Human pose (keypoint detection)",
+      "runtime": "onnxrt",
+      "dataset": "COCO",
+      "input": "640x640",
+      "boards": [
+        "mo-68a"
+      ],
+      "images": [
+        "V1.0.5",
+        "V1.0.6"
+      ],
+      "tidl": "11_02_17_00",
+      "compiled_by": "inhand",
+      "source": {
+        "type": "ti-modelzoo",
+        "version": "11_02_00",
+        "file": "yolox_s_pose_ti_lite_640_20220301_model.onnx",
+        "sha256": "576b23065b6ad0ba74d54b4774c821bb753962ccd8b250992fd84af377d8cc45",
+        "size_bytes": 53657122,
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/keypoint/coco/edgeai-yolox/yolox_s_pose_ti_lite_640_20220301_model.onnx",
+        "link": "models/ONR-KD-7060-human-pose-yolox-s-640x640/source-model.link",
+        "modelzoo_path": "edgeai-modelzoo/models/vision/keypoint/coco/edgeai-yolox/yolox_s_pose_ti_lite_640_20220301_model.onnx",
+        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
+        "license_urls": [
+          "https://github.com/TexasInstruments/edgeai-tensorlab/blob/f272548ef0fe96046f1bf2c3833e040a1ecf8e44/edgeai-modelzoo/models/vision/keypoint/coco/edgeai-yolox/LICENSE"
+        ]
+      },
+      "upstream_artifact": {
+        "type": "ti-modelzoo",
+        "soc": "AM68A",
+        "quantization": "8bits",
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM68A/8bits/kd-7060_onnxrt_coco_edgeai-yolox_yolox_s_pose_ti_lite_640_20220301_model_onnx.tar.gz",
+        "link": "models/ONR-KD-7060-human-pose-yolox-s-640x640/ti-artifact-am68a.link",
+        "size_bytes": 46574392,
+        "verified_on_mo68a": false
+      },
+      "artifact": {
+        "hosting": "pending",
+        "image_path": null,
+        "model_sha256": "576b23065b6ad0ba74d54b4774c821bb753962ccd8b250992fd84af377d8cc45",
+        "download_url": null,
+        "status": "pending-hosting"
+      },
+      "verification": "audited-latency",
+      "latency": {
+        "mean_ms": 14.103,
+        "median_ms": 13.953,
+        "p95_ms": 14.62,
+        "runs": 100,
+        "warmup": 5,
+        "onnxruntime": "1.23.0",
+        "kernel": "6.12.35-vendor-k3-mo68a",
+        "scope": "wall-clock synchronous session.run; excludes pre/post-processing and session creation",
+        "record": "benchmarks/results/mo68a-v105-tidl-11_02_17_00/kd-7060-c7x.json"
+      },
+      "notes": "Compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo68A."
+    },
+    {
+      "id": "ONR-OD-8020-ssd-lite-mobv2-mmdet-coco-512x512",
+      "ti_id": "od-8020_onnxrt",
+      "ti_run_dir": "od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx",
+      "task": "detection",
+      "task_label": "Object detection",
+      "runtime": "onnxrt",
+      "dataset": "COCO",
+      "input": "512x512",
+      "boards": [
+        "mo-68a"
+      ],
+      "images": [
+        "V1.0.5",
+        "V1.0.6"
+      ],
+      "tidl": "11_02_17_00",
+      "compiled_by": "inhand",
+      "source": {
+        "type": "ti-modelzoo",
+        "version": "11_02_00",
+        "file": "ssd_mobilenetv2_lite_512x512_20201214_model.onnx",
+        "sha256": "8091d01eaaffb9b8fa7c5386803c67c65bbcba24a1c8083b83f92a01495fedc3",
+        "size_bytes": 12790746,
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/detection/coco/edgeai-mmdet/ssd_mobilenetv2_lite_512x512_20201214_model.onnx",
+        "link": "models/ONR-OD-8020-ssd-lite-mobv2-mmdet-coco-512x512/source-model.link",
+        "modelzoo_path": "edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/ssd_mobilenetv2_lite_512x512_20201214_model.onnx",
+        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
+        "license_urls": [
+          "https://github.com/TexasInstruments/edgeai-tensorlab/blob/f272548ef0fe96046f1bf2c3833e040a1ecf8e44/edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/LICENSE"
+        ]
+      },
+      "upstream_artifact": {
+        "type": "ti-modelzoo",
+        "soc": "AM68A",
+        "quantization": "8bits",
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM68A/8bits/od-8020_onnxrt_coco_edgeai-mmdet_ssd_mobilenetv2_lite_512x512_20201214_model_onnx.tar.gz",
+        "link": "models/ONR-OD-8020-ssd-lite-mobv2-mmdet-coco-512x512/ti-artifact-am68a.link",
+        "size_bytes": 15222339,
+        "verified_on_mo68a": false
+      },
+      "artifact": {
+        "hosting": "pending",
+        "image_path": null,
+        "model_sha256": "9897cf19259f1affe32aa111dc7decbbf299b367b5b1ac7ddce89f1e8d0dd5fd",
+        "download_url": null,
+        "status": "pending-hosting"
+      },
+      "verification": "audited-latency",
+      "latency": {
+        "mean_ms": 8.456,
+        "median_ms": 8.244,
+        "p95_ms": 9.154,
+        "runs": 100,
+        "warmup": 5,
+        "onnxruntime": "1.23.0",
+        "kernel": "6.12.35-vendor-k3-mo68a",
+        "scope": "wall-clock synchronous session.run; excludes pre/post-processing and session creation",
+        "record": "benchmarks/results/mo68a-v105-tidl-11_02_17_00/od-8020-c7x.json"
+      },
+      "notes": "Compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo68A."
+    },
+    {
+      "id": "ONR-OD-8200-yolox-nano-lite-mmdet-coco-416x416",
+      "ti_id": "od-8200_onnxrt",
+      "ti_run_dir": "od-8200_onnxrt_coco_edgeai-mmdet_yolox_nano_lite_416x416_20220214_model_onnx",
+      "task": "detection",
+      "task_label": "Object detection",
+      "runtime": "onnxrt",
+      "dataset": "COCO",
+      "input": "416x416",
+      "boards": [
+        "mo-68a"
+      ],
+      "images": [
+        "V1.0.5",
+        "V1.0.6"
+      ],
+      "tidl": "11_02_17_00",
+      "compiled_by": "inhand",
+      "source": {
+        "type": "ti-modelzoo",
+        "version": "11_02_00",
+        "file": "yolox_nano_lite_416x416_20220214_model.onnx",
+        "sha256": "319f9e447b63655fc089f25c2d0975d21d9b3b228f5961f95d191e8cb6002da1",
+        "size_bytes": 9079592,
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/detection/coco/edgeai-mmdet/yolox_nano_lite_416x416_20220214_model.onnx",
+        "link": "models/ONR-OD-8200-yolox-nano-lite-mmdet-coco-416x416/source-model.link",
+        "modelzoo_path": "edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/yolox_nano_lite_416x416_20220214_model.onnx",
+        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
+        "license_urls": [
+          "https://github.com/TexasInstruments/edgeai-tensorlab/blob/f272548ef0fe96046f1bf2c3833e040a1ecf8e44/edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/LICENSE"
+        ]
+      },
+      "upstream_artifact": {
+        "type": "ti-modelzoo",
+        "soc": "AM68A",
+        "quantization": "8bits",
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM68A/8bits/od-8200_onnxrt_coco_edgeai-mmdet_yolox_nano_lite_416x416_20220214_model_onnx.tar.gz",
+        "link": "models/ONR-OD-8200-yolox-nano-lite-mmdet-coco-416x416/ti-artifact-am68a.link",
+        "size_bytes": 10641474,
+        "verified_on_mo68a": false
+      },
+      "artifact": {
+        "hosting": "pending",
+        "image_path": null,
+        "model_sha256": "e68ff9b757d60eae794344101185b31e1e5d48d33302becc4f3bb90665ae0797",
+        "download_url": null,
+        "status": "pending-hosting"
+      },
+      "verification": "audited-latency",
+      "latency": {
+        "mean_ms": 5.147,
+        "median_ms": 5.131,
+        "p95_ms": 5.23,
+        "runs": 100,
+        "warmup": 5,
+        "onnxruntime": "1.23.0",
+        "kernel": "6.12.35-vendor-k3-mo68a",
+        "scope": "wall-clock synchronous session.run; excludes pre/post-processing and session creation",
+        "record": "benchmarks/results/mo68a-v105-tidl-11_02_17_00/od-8200-c7x.json"
+      },
+      "notes": "Compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo68A."
+    },
+    {
+      "id": "ONR-OD-8220-yolox-s-lite-mmdet-coco-640x640",
+      "ti_id": "od-8220_onnxrt",
+      "ti_run_dir": "od-8220_onnxrt_coco_edgeai-mmdet_yolox_s_lite_640x640_20220221_model_onnx",
+      "task": "detection",
+      "task_label": "Object detection",
+      "runtime": "onnxrt",
+      "dataset": "COCO",
+      "input": "640x640",
+      "boards": [
+        "mo-68a"
+      ],
+      "images": [
+        "V1.0.5",
+        "V1.0.6"
+      ],
+      "tidl": "11_02_17_00",
+      "compiled_by": "inhand",
+      "source": {
+        "type": "ti-modelzoo",
+        "version": "11_02_00",
+        "file": "yolox_s_lite_640x640_20220221_model.onnx",
+        "sha256": "9000aae99d4677d134c120a0eee0e943f3321238aea9f710c150c55f6d59aae6",
+        "size_bytes": 35940748,
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/detection/coco/edgeai-mmdet/yolox_s_lite_640x640_20220221_model.onnx",
+        "link": "models/ONR-OD-8220-yolox-s-lite-mmdet-coco-640x640/source-model.link",
+        "modelzoo_path": "edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/yolox_s_lite_640x640_20220221_model.onnx",
+        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
+        "license_urls": [
+          "https://github.com/TexasInstruments/edgeai-tensorlab/blob/f272548ef0fe96046f1bf2c3833e040a1ecf8e44/edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/LICENSE"
+        ]
+      },
+      "upstream_artifact": {
+        "type": "ti-modelzoo",
+        "soc": "AM68A",
+        "quantization": "8bits",
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM68A/8bits/od-8220_onnxrt_coco_edgeai-mmdet_yolox_s_lite_640x640_20220221_model_onnx.tar.gz",
+        "link": "models/ONR-OD-8220-yolox-s-lite-mmdet-coco-640x640/ti-artifact-am68a.link",
+        "size_bytes": 41303732,
+        "verified_on_mo68a": false
+      },
+      "artifact": {
+        "hosting": "pending",
+        "image_path": null,
+        "model_sha256": "ccc57b2fa3a3b3487ba140eb3a90d6159187bde5bd1496721fd3f57449836460",
+        "download_url": null,
+        "status": "pending-hosting"
+      },
+      "verification": "audited-latency",
+      "latency": {
+        "mean_ms": 13.358,
+        "median_ms": 13.236,
+        "p95_ms": 13.888,
+        "runs": 100,
+        "warmup": 5,
+        "onnxruntime": "1.23.0",
+        "kernel": "6.12.35-vendor-k3-mo68a",
+        "scope": "wall-clock synchronous session.run; excludes pre/post-processing and session creation",
+        "record": "benchmarks/results/mo68a-v105-tidl-11_02_17_00/od-8220-c7x.json"
+      },
+      "notes": "Compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo68A."
+    },
+    {
+      "id": "ONR-OD-8420-yolox-s-lite-mmdet-widerface-640x640",
+      "ti_id": "od-8420_onnxrt",
+      "ti_run_dir": "od-8420_onnxrt_widerface_edgeai-mmdet_yolox_s_lite_640x640_20220307_model_onnx",
+      "task": "detection",
+      "task_label": "Object detection",
+      "runtime": "onnxrt",
+      "dataset": "WIDER FACE",
+      "input": "640x640",
+      "boards": [
+        "mo-68a"
+      ],
+      "images": [
+        "V1.0.5",
+        "V1.0.6"
+      ],
+      "tidl": "11_02_17_00",
+      "compiled_by": "inhand",
+      "source": {
+        "type": "ti-modelzoo",
+        "version": "11_02_00",
+        "file": "yolox_s_lite_640x640_20220307_model.onnx",
+        "sha256": "2562d269cc3e40e6ee1845844a43213ed9010af672b4ae2805b72060e6aca425",
+        "size_bytes": 35815974,
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/detection/widerface/edgeai-mmdet/yolox_s_lite_640x640_20220307_model.onnx",
+        "link": "models/ONR-OD-8420-yolox-s-lite-mmdet-widerface-640x640/source-model.link",
+        "modelzoo_path": "edgeai-modelzoo/models/vision/detection/widerface/edgeai-mmdet/yolox_s_lite_640x640_20220307_model.onnx",
+        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
+        "license_urls": []
+      },
+      "upstream_artifact": {
+        "type": "ti-modelzoo",
+        "soc": "AM68A",
+        "quantization": "8bits",
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM68A/8bits/od-8420_onnxrt_widerface_edgeai-mmdet_yolox_s_lite_640x640_20220307_model_onnx.tar.gz",
+        "link": "models/ONR-OD-8420-yolox-s-lite-mmdet-widerface-640x640/ti-artifact-am68a.link",
+        "size_bytes": 41678975,
+        "verified_on_mo68a": false
+      },
+      "artifact": {
+        "hosting": "pending",
+        "image_path": null,
+        "model_sha256": "f0581525763a8a386f837056d67b3953eb418cdca3cdbbfa50ba4c6f16216226",
+        "download_url": null,
+        "status": "pending-hosting"
+      },
+      "verification": "audited-latency",
+      "latency": {
+        "mean_ms": 11.805,
+        "median_ms": 11.688,
+        "p95_ms": 12.086,
+        "runs": 100,
+        "warmup": 5,
+        "onnxruntime": "1.23.0",
+        "kernel": "6.12.35-vendor-k3-mo68a",
+        "scope": "wall-clock synchronous session.run; excludes pre/post-processing and session creation",
+        "record": "benchmarks/results/mo68a-v105-tidl-11_02_17_00/od-8420-c7x.json"
+      },
+      "notes": "Compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo68A."
+    },
+    {
+      "id": "ONR-SS-7618-deeplabv3lite-mobv2-qat-robokit-768x432",
+      "ti_id": "ss-7618_onnxrt",
+      "ti_run_dir": "ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx",
+      "task": "segmentation",
+      "task_label": "Semantic segmentation",
+      "runtime": "onnxrt",
+      "dataset": "TI Robokit",
+      "input": "768x432",
+      "boards": [
+        "mo-68a"
+      ],
+      "images": [
+        "V1.0.5",
+        "V1.0.6"
+      ],
+      "tidl": "11_02_17_00",
+      "compiled_by": "inhand",
+      "source": {
+        "type": "ti-modelzoo",
+        "version": "11_02_00",
+        "file": "deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx",
+        "sha256": "feef56d45457d498d8ee4773fe67d467d1989a9c926ed53322086d9ea1c13bee",
+        "size_bytes": 9901576,
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/segmentation/ti-robokit/edgeai-tv/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx",
+        "link": "models/ONR-SS-7618-deeplabv3lite-mobv2-qat-robokit-768x432/source-model.link",
+        "modelzoo_path": "edgeai-modelzoo/models/vision/segmentation/ti-robokit/edgeai-tv/deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2.onnx",
+        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
+        "license_urls": [
+          "https://github.com/TexasInstruments/edgeai-tensorlab/blob/f272548ef0fe96046f1bf2c3833e040a1ecf8e44/edgeai-modelzoo/models/vision/segmentation/ti-robokit/edgeai-tv/LICENSE"
+        ]
+      },
+      "upstream_artifact": {
+        "type": "ti-modelzoo",
+        "soc": "AM68A",
+        "quantization": "8bits",
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM68A/8bits/ss-7618_onnxrt_ti-robokit_edgeai-tv_deeplabv3plus_mnetv2_edgeailite_robokit_768x432_qat-p2_onnx.tar.gz",
+        "link": "models/ONR-SS-7618-deeplabv3lite-mobv2-qat-robokit-768x432/ti-artifact-am68a.link",
+        "size_bytes": 5519337,
+        "verified_on_mo68a": false
+      },
+      "artifact": {
+        "hosting": "pending",
+        "image_path": null,
+        "model_sha256": "feef56d45457d498d8ee4773fe67d467d1989a9c926ed53322086d9ea1c13bee",
+        "download_url": null,
+        "status": "pending-hosting"
+      },
+      "verification": "audited-latency",
+      "latency": {
+        "mean_ms": 17.141,
+        "median_ms": 16.886,
+        "p95_ms": 18.198,
+        "runs": 100,
+        "warmup": 5,
+        "onnxruntime": "1.23.0",
+        "kernel": "6.12.35-vendor-k3-mo68a",
+        "scope": "wall-clock synchronous session.run; excludes pre/post-processing and session creation",
+        "record": "benchmarks/results/mo68a-v105-tidl-11_02_17_00/ss-7618-c7x.json"
+      },
+      "notes": "Compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo68A."
+    },
+    {
+      "id": "ONR-SS-8610-deeplabv3lite-mobv2-ade20k32-512x512",
+      "ti_id": "ss-8610_onnxrt",
+      "ti_run_dir": "ss-8610_onnxrt_ade20k32_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210308_outby4_onnx",
+      "task": "segmentation",
+      "task_label": "Semantic segmentation",
+      "runtime": "onnxrt",
+      "dataset": "ADE20K (32 classes)",
+      "input": "512x512",
+      "boards": [
+        "mo-68a"
+      ],
+      "images": [
+        "V1.0.5",
+        "V1.0.6"
+      ],
+      "tidl": "11_02_17_00",
+      "compiled_by": "inhand",
+      "source": {
+        "type": "ti-modelzoo",
+        "version": "11_02_00",
+        "file": "deeplabv3plus_mobilenetv2_edgeailite_512x512_20210308_outby4.onnx",
+        "sha256": "86e60a2b12e2b27603ecd62762f9c850e62ea8f9142d9d674881a1da6748488c",
+        "size_bytes": 9911946,
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/segmentation/ade20k32/edgeai-tv/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210308_outby4.onnx",
+        "link": "models/ONR-SS-8610-deeplabv3lite-mobv2-ade20k32-512x512/source-model.link",
+        "modelzoo_path": "edgeai-modelzoo/models/vision/segmentation/ade20k32/edgeai-tv/deeplabv3plus_mobilenetv2_edgeailite_512x512_20210308_outby4.onnx",
+        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
+        "license_urls": []
+      },
+      "upstream_artifact": {
+        "type": "ti-modelzoo",
+        "soc": "AM68A",
+        "quantization": "8bits",
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM68A/8bits/ss-8610_onnxrt_ade20k32_edgeai-tv_deeplabv3plus_mobilenetv2_edgeailite_512x512_20210308_outby4_onnx.tar.gz",
+        "link": "models/ONR-SS-8610-deeplabv3lite-mobv2-ade20k32-512x512/ti-artifact-am68a.link",
+        "size_bytes": 11937419,
+        "verified_on_mo68a": false
+      },
+      "artifact": {
+        "hosting": "pending",
+        "image_path": null,
+        "model_sha256": "83a2e263bb7fa9558318eb88bc29ec8406c449ae0dbde55da78eb73d898606fe",
+        "download_url": null,
+        "status": "pending-hosting"
+      },
+      "verification": "audited-latency",
+      "latency": {
+        "mean_ms": 10.98,
+        "median_ms": 10.977,
+        "p95_ms": 11.038,
+        "runs": 100,
+        "warmup": 5,
+        "onnxruntime": "1.23.0",
+        "kernel": "6.12.35-vendor-k3-mo68a",
+        "scope": "wall-clock synchronous session.run; excludes pre/post-processing and session creation",
+        "record": "benchmarks/results/mo68a-v105-tidl-11_02_17_00/ss-8610-c7x.json"
+      },
+      "notes": "Compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo68A."
+    },
+    {
+      "id": "ONR-SS-8690-fpnlite-aspp-regnetx400mf-ade20k32-384x384",
+      "ti_id": "ss-8690_onnxrt",
+      "ti_run_dir": "ss-8690_onnxrt_ade20k32_edgeai-tv_fpn_aspp_regnetx400mf_edgeailite_384x384_20210314_outby4_onnx",
+      "task": "segmentation",
+      "task_label": "Semantic segmentation",
+      "runtime": "onnxrt",
+      "dataset": "ADE20K (32 classes)",
+      "input": "384x384",
+      "boards": [
+        "mo-68a"
+      ],
+      "images": [
+        "V1.0.5",
+        "V1.0.6"
+      ],
+      "tidl": "11_02_17_00",
+      "compiled_by": "inhand",
+      "source": {
+        "type": "ti-modelzoo",
+        "version": "11_02_00",
+        "file": "fpn_aspp_regnetx400mf_edgeailite_384x384_20210314_outby4.onnx",
+        "sha256": "f73cab20497d56ccd78df4f328a4f933b5df5d98998f29dd27f02da7410c2a03",
+        "size_bytes": 24018372,
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/segmentation/ade20k32/edgeai-tv/fpn_aspp_regnetx400mf_edgeailite_384x384_20210314_outby4.onnx",
+        "link": "models/ONR-SS-8690-fpnlite-aspp-regnetx400mf-ade20k32-384x384/source-model.link",
+        "modelzoo_path": "edgeai-modelzoo/models/vision/segmentation/ade20k32/edgeai-tv/fpn_aspp_regnetx400mf_edgeailite_384x384_20210314_outby4.onnx",
+        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
+        "license_urls": []
+      },
+      "upstream_artifact": {
+        "type": "ti-modelzoo",
+        "soc": "AM68A",
+        "quantization": "8bits",
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/modelartifacts/AM68A/8bits/ss-8690_onnxrt_ade20k32_edgeai-tv_fpn_aspp_regnetx400mf_edgeailite_384x384_20210314_outby4_onnx.tar.gz",
+        "link": "models/ONR-SS-8690-fpnlite-aspp-regnetx400mf-ade20k32-384x384/ti-artifact-am68a.link",
+        "size_bytes": 28329163,
+        "verified_on_mo68a": false
+      },
+      "artifact": {
+        "hosting": "pending",
+        "image_path": null,
+        "model_sha256": "3bbd2b77a4a9bbcd697dc89a0f1a4038e86fbed801a5ef41b069c8802698df84",
+        "download_url": null,
+        "status": "pending-hosting"
+      },
+      "verification": "audited-latency",
+      "latency": {
+        "mean_ms": 9.944,
+        "median_ms": 9.652,
+        "p95_ms": 11.923,
+        "runs": 100,
+        "warmup": 5,
+        "onnxruntime": "1.23.0",
+        "kernel": "6.12.35-vendor-k3-mo68a",
+        "scope": "wall-clock synchronous session.run; excludes pre/post-processing and session creation",
+        "record": "benchmarks/results/mo68a-v105-tidl-11_02_17_00/ss-8690-c7x.json"
+      },
+      "notes": "Compiled by InHand with TIDL 11_02_17_00 from the TI model-zoo source model; the TI pre-compiled artifact link is an upstream reference and was not re-tested on Mo68A."
+    },
+    {
+      "id": "yolox-tiny-lite-8210-zone-demo",
+      "ti_id": "od-8210_onnxrt",
+      "ti_run_dir": null,
+      "task": "detection",
+      "task_label": "Object detection",
+      "runtime": "onnxrt",
+      "dataset": "COCO",
+      "input": "416x416",
+      "boards": [
+        "mo-68a"
+      ],
+      "images": [
+        "V1.0.5",
+        "V1.0.6"
+      ],
+      "tidl": "11_02_17_00",
+      "compiled_by": "inhand",
+      "source": {
+        "type": "ti-modelzoo",
+        "version": "11_02_00",
+        "file": "yolox_tiny_lite_416x416_20220217_model.onnx",
+        "sha256": "c9d2a3fdb21bed079a74029441d83235ddd910c82f1e7b9de5a2a5998bc3eeca",
+        "size_bytes": 20263248,
+        "url": "https://software-dl.ti.com/jacinto7/esd/modelzoo/11_02_00/models/vision/detection/coco/edgeai-mmdet/yolox_tiny_lite_416x416_20220217_model.onnx",
+        "link": "models/yolox-tiny-lite-8210-zone-demo/source-model.link",
+        "modelzoo_path": "edgeai-modelzoo/models/vision/detection/coco/edgeai-mmdet/yolox_tiny_lite_416x416_20220217_model.onnx",
+        "modelzoo_commit": "f272548ef0fe96046f1bf2c3833e040a1ecf8e44",
+        "license_urls": [
+          "https://github.com/TexasInstruments/edgeai-modelzoo/blob/99f1bd6e434bdde9d26c3b0678ce368e69050ea3/models/vision/detection/coco/edgeai-mmdet/LICENSE"
+        ],
+        "prototxt_sha256": "bd8d5558af8c982da135579cd84851f9d95382aab6f089df7a49edacb846f142"
+      },
+      "upstream_artifact": null,
+      "artifact": {
+        "hosting": "pending",
+        "image_path": null,
+        "download_url": null,
+        "status": "pending-hosting"
+      },
+      "verification": "tutorial",
+      "latency": null,
+      "notes": "Mo68A zone-counting tutorial model (mo-docs: Compile your own model / warehouse application). Not part of /opt/model_zoo; the compile scripts live in compile/zone-demo."
+    }
+  ]
+}

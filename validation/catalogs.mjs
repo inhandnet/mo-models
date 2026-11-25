@@ -92,7 +92,11 @@ export function checkModels(root) {
     if (model.verification === 'audited-latency') {
       need(model.latency?.record, where, 'audited latency needs a raw record');
       const record = json(root, model.latency.record);
-      need(record.model === model.id && record.model_sha256 === model.source.sha256 &&
+      // LOCAL PATCH, pending upstream in developer: a bundle holds a model derived
+      // from the source, so the record is checked against the artifact the catalog
+      // publishes. Entries without that checksum fall back to the source model.
+      need(record.model === model.id &&
+        record.model_sha256 === (model.artifact.model_sha256 ?? model.source.sha256) &&
         Array.isArray(record.samples_ms) && record.samples_ms.length === record.runs &&
         record.samples_ms.every(x => Number.isFinite(x) && x >= 0), where, 'latency record does not match model or sample count');
       need(Number.isFinite(record.mean_ms) && Math.abs(record.mean_ms - record.samples_ms.reduce((a,b) => a+b, 0) / record.runs) < 0.000001, where, 'latency mean differs from raw samples');
