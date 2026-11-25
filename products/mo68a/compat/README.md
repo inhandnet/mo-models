@@ -5,6 +5,6 @@
 | Board | Image | TIDL | Firmware dir | TI ONNX Runtime | Host toolchain |
 |---|---|---|---|---|---|
 | mo-68a | V1.0.5 | 11_02_17_00 | adas/11_1 | 1.23.0 | edgeai-tidl-tools `11_02_17_00` (`d2be720`) |
-| mo-68a | V1.0.6 | 11_02_17_00 | adas/11_1 | 1.23.0 | edgeai-tidl-tools `11_02_17_00` (`d2be720`) |
+| mo-68a | V1.1.0 | 11_02_17_00 | adas/11_1 | 1.23.0 | edgeai-tidl-tools `11_02_17_00` (`d2be720`) |
 
-The values were read off a Mo 68A running V1.0.5 on 2026-11-24. V1.0.6 is V1.0.5 plus the preinstalled `/opt/model_zoo`; kernel, firmware and runtimes are unchanged. They are not a manifest for every later image; add a new row when a new image or TIDL version is validated, and keep the previous row so older artifacts stay traceable.
+The values were read off a Mo 68A running V1.0.5 on 2026-11-24. V1.1.0 is V1.0.5 plus the preinstalled `/opt/model_zoo`; kernel, firmware and runtimes are unchanged. They are not a manifest for every later image; add a new row when a new image or TIDL version is validated, and keep the previous row so older artifacts stay traceable.

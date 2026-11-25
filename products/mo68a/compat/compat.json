@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source": "Read off a Mo68A running V1.0.5 on 2026-11-24. V1.0.6 is V1.0.5 plus the preinstalled /opt/model_zoo; kernel, firmware and runtimes are unchanged, so the two baselines differ only in the image.",
+  "source": "Read off a Mo68A running V1.0.5 on 2026-11-24. V1.1.0 is V1.0.5 plus the preinstalled /opt/model_zoo; kernel, firmware and runtimes are unchanged, so the two baselines differ only in the image.",
   "baselines": [
     {
       "board": "mo-68a",
@@ -33,7 +33,7 @@
     },
     {
       "board": "mo-68a",
-      "image": "V1.0.6",
+      "image": "V1.1.0",
       "os": "Debian 13 (Armbian 26.02.0-trunk), Linux 6.12.35-vendor-k3-mo68a",
       "board_python": "3.12.11",
       "tidl": "11_02_17_00",
@@ -54,7 +54,7 @@
         "am68a_sdk_baseline": "11.01.00.03"
       },
       "ti_modelzoo_version": "11_02_00",
-      "model_bundles": "models.json entries with images containing V1.0.6",
+      "model_bundles": "models.json entries with images containing V1.1.0",
       "firmware_archives": [
         "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_17_00/FIRMWARES/AM68A/adas/11_1/firmware.tar.gz",
         "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_17_00/FIRMWARES/AM68A/adas/11_1/tidl_lib.tar.gz"
